@@ -18,52 +18,56 @@
       height: 100vh;
       text-align: center;
     }
+    
     .header {
-   padding: 20px;
-   background-color: black; /* Dark Green */
-   color: white;
-   display: flex;
-   justify-content: center; /* Center items horizontally */
-   align-items: center; /* Center items vertically */
-  }
+      padding: 20px;
+      background-color: black;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap; /* Allow wrapping for smaller screens */
+    }
 
     .header h1 {
       margin: 0;
-      font-size: 32px;
+      font-size: 28px;
     }
-    .header img{
-height: 50px;
-width:60px;
-margin-right: 10px;
 
+    .header img {
+      height: 50px;
+      width: 60px;
+      margin: 0 10px;
     }
-   
+
     .main-content {
-     
       display: flex;
       flex-direction: column;
       align-items: center;
-      
       flex: 1;
-      padding: 0 20px;
+      padding: 20px;
       background: url('static/images/image.png') no-repeat center;
       background-size: cover;
       background-color: #fff;
+      text-align: center;
     }
+
     .main-content h2 {
-      color:black;
-      font-size: 30px;
-      font-weight:900;
-      
+      color: black;
+      font-size: 28px;
+      font-weight: 900;
+      margin: 15px 0;
     }
+
     .main-content p {
       font-family: 'Dancing Script', cursive;
-      font-size: 25px;
-      color:rgb(0, 0, 0);
+      font-size: 22px;
+      color: rgb(0, 0, 0);
       margin-bottom: 30px;
     }
+
     .try-btn {
-      padding: 15px 30px;
+      padding: 12px 25px;
       background-color: black;
       color: white;
       border: none;
@@ -71,33 +75,75 @@ margin-right: 10px;
       cursor: pointer;
       font-size: 18px;
       transition: background-color 0.3s ease;
+      max-width: 200px; /* Limit width for smaller screens */
     }
+
     .try-btn:hover {
       background-color: #205437;
     }
+
     .footer {
       padding: 10px;
-      background-color:black;
+      background-color: black;
       color: white;
       text-align: center;
+    }
+
+    /* Media Queries */
+    @media (max-width: 768px) {
+      .header h1 {
+        font-size: 24px;
+      }
+
+      .main-content h2 {
+        font-size: 24px;
+      }
+
+      .main-content p {
+        font-size: 20px;
+        padding: 0 10px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .header {
+        padding: 15px;
+        flex-direction: column; /* Stack items vertically */
+      }
+
+      .header h1 {
+        font-size: 20px;
+        text-align: center;
+      }
+
+      .main-content h2 {
+        font-size: 22px;
+      }
+
+      .main-content p {
+        font-size: 18px;
+      }
+
+      .try-btn {
+        padding: 10px 20px;
+        font-size: 16px;
+      }
     }
   </style>
 </head>
 <body>
 
   <div class="header">
+    <img src="static/images/logo.jpg" alt="Logo">
     <h1>Medi Care</h1>
-    <img src="static/images/logo.jpg" alt=" image">
-    <a href="#" class="login-link"></a>
   </div>
 
   <div class="main-content">
-    <video autoplay muted loop>
+    <video autoplay muted loop style="max-width: 100%; height: auto;">
       <source src="video.mp4" type="video/mp4">
       Your browser does not support the video tag.
-      </video>
-      
-    <h2>Welcome to Medi Care </h2>
+    </video>
+    <h2>Welcome to Medi Care</h2>
     <p>Your personal chatbot for natural remedies based on your needs.</p>
     <button class="try-btn" onclick="redirectToChat()">Try Medi Care</button>
   </div>

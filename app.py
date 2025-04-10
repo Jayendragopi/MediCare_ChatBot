@@ -5,7 +5,12 @@ app = Flask(__name__)
 # Predefined remedies data
 remedies_data = {
     
-  
+  "hi":{
+      "Hi,How are you!"
+  },
+    "Hii":{
+      "Hi,How are you!"
+  },
   "Constipation": {
     "remedy": "Prunes, Flaxseed, Psyllium Husk",
     "preparation": "Eat a handful (5-7) of prunes or drink prune juice. Flaxseed should be ground and added to smoothies, oatmeal, or yogurt. For psyllium husk, mix 1 tablespoon in a glass of water and drink it immediately, followed by another glass of water.",
